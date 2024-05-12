@@ -6,15 +6,17 @@ import imageio
 
 def diffusion_anisotrope(image, dt, conductance, kappa, option):
     """
-    Cette fonction applique une diffusion anisotrope sur une image.
+    Effectue la diffusion anisotrope sur une image en niveaux de gris.
 
     Args :
-        image : L'image d'entrée sous forme de tableau NumPy.
-        dt : Pas de temps pour le processus de diffusion.
-        conductance : Fonction qui calcule le coefficient de diffusion à chaque pixel.
+        image (numpy.ndarray) : L'image en niveaux de gris.
+        dt (float) : Pas de temps pour la diffusion.
+        conductance (function) : Fonction de conductance à utiliser.
+        kappa (float) : Paramètre de conductance.
+        option (int) : Option de calcul de conductance.
 
     Returns :
-        L'image diffusée sous forme de tableau NumPy.
+        numpy.ndarray : L'image diffusée.
     """
 
     # Initialiser l'image diffusée
@@ -62,31 +64,38 @@ def diffusion_anisotrope(image, dt, conductance, kappa, option):
 
 def conductance(gradient, kappa, option):
     """
-    Cette fonction calcule le coefficient de diffusion en fonction du gradient.
+    Calcule la conductance en fonction du gradient et des paramètres donnés.
 
     Args :
-        gradient : La grandeur du gradient de l'image sous forme de tableau NumPy.
-        kappa :
-        option :
-
-        Les espaces d'échelle générés par ces deux fonctions sont différents :
-        le premier privilégie les arêtes à fort contraste par rapport à celles à faible contraste,
-        tandis que le second privilégie les régions larges par rapport aux plus petites.
+        gradient (float) : Valeur du gradient.
+        kappa (float) : Paramètre de conductance.
+        option (int) : Option de calcul de conductance. Il y a deux façons de calculer la conductance.
 
     Returns :
-        Un tableau NumPy contenant le coefficient de diffusion pour chaque pixel.
+        float : Valeur de conductance calculée.
     """
 
     if option == 2:
         c = math.exp(-(gradient / kappa) ** 2)
     else:
-        # Calculer le coefficient de diffusion
         c = 1.0 / (1.0 + (gradient / kappa) ** 2)
 
     return c
 
 
 def main(filename_originale, filenames_bruite, dt, iterations, kappa, option):
+    """
+        Fonction principale pour appliquer la diffusion anisotrope sur des images.
+
+        Args :
+            filename_originale (str) : Chemin de l'image originale.
+            filenames_bruite (list) : Chemins des images bruitées.
+            dt (float) : Pas de temps pour la diffusion.
+            iterations (int) : Nombre d'itérations de diffusion.
+            kappa (float) : Paramètre de conductance.
+            option (int) : Option de calcul de conductance.
+    """
+
     # Charger l'image originale et la convertir en niveaux de gris
     img_originale = cv2.imread(filename_originale)
     img_originale = cv2.cvtColor(img_originale, cv2.COLOR_BGR2GRAY)
@@ -112,7 +121,7 @@ def main(filename_originale, filenames_bruite, dt, iterations, kappa, option):
             images.append(image_finale.astype('uint8'))
 
         # Sauvegarder les images dans un GIF
-        imageio.mimsave('diffusion.gif', images)
+        #imageio.mimsave('diffusion.gif', images)
 
         # Afficher les résultats
         cv2.imshow(filename_bruite, imgGrey.astype('uint8'))
