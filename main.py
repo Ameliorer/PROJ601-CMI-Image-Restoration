@@ -1,6 +1,7 @@
 import math
 
 import cv2
+import imageio
 
 
 def diffusion_anisotrope(image, dt, conductance, kappa, option):
@@ -93,6 +94,8 @@ def main(filename_originale, filenames_bruite, dt, iterations, kappa, option):
     cv2.imshow("Image originale", img_originale.astype('uint8'))
     cv2.waitKey(0)
 
+    images = []
+
     for filename_bruite in filenames_bruite:
         # Charger l'image bruitée et la convertir en niveaux de gris
         img = cv2.imread(filename_bruite)
@@ -106,6 +109,10 @@ def main(filename_originale, filenames_bruite, dt, iterations, kappa, option):
         image_finale = gaussian
         for _ in range(iterations):
             image_finale = diffusion_anisotrope(image_finale, dt, conductance, kappa, option)
+            images.append(image_finale.astype('uint8'))
+
+        # Sauvegarder les images dans un GIF
+        imageio.mimsave('diffusion.gif', images)
 
         # Afficher les résultats
         cv2.imshow(filename_bruite, imgGrey.astype('uint8'))
@@ -115,10 +122,10 @@ def main(filename_originale, filenames_bruite, dt, iterations, kappa, option):
 
 
 # Valeurs pour les tests
-filename_originale = "femme.jpg"
-filenames_bruite = ["femme.jpg", "femme-noisy50.png", "femme-noisy80.png", "femme-noisy100.png"]
+filename_originale = "IRM.jpeg"
+filenames_bruite = ["IRM.jpeg"]
 dt = 0.14
-iterations = 30
+iterations = 100
 kappa = 5
 option = 2
 main(filename_originale, filenames_bruite, dt, iterations, kappa, option)
