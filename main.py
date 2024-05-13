@@ -121,7 +121,7 @@ def main(filename_originale, filenames_bruite, dt, iterations, kappa, option):
             images.append(image_finale.astype('uint8'))
 
         # Sauvegarder les images dans un GIF
-        #imageio.mimsave('diffusion.gif', images)
+        imageio.mimsave('diffusion.gif', images, duration=10)
 
         # Afficher les résultats
         cv2.imshow(filename_bruite, imgGrey.astype('uint8'))
@@ -131,8 +131,9 @@ def main(filename_originale, filenames_bruite, dt, iterations, kappa, option):
 
 
 # Valeurs pour les tests
-filename_originale = "IRM.jpeg"
-filenames_bruite = ["IRM.jpeg"]
+dir = "img/"
+filename_originale = f"{dir}femme.jpg"
+filenames_bruite = [f"{dir}femme.jpg"]
 dt = 0.14
 iterations = 100
 kappa = 5
