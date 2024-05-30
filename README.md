@@ -84,19 +84,19 @@ Le projet se compose des fonctions principales suivantes :
 ## Exemples
 Supposons que vous ayez les images suivantes dans un répertoire img/ :
 
-![](img\femme.jpg "femme.jpg")
+![](img/femme.jpg)
 
 (image bruitée avec un niveau de bruit de 50)
 
-![](img\femme-noisy50.png "femme-noisy50.png")
+![](img/femme-noisy50.png)
 
 (image bruitée avec un niveau de bruit de 80)
 
-![](img\femme-noisy80.png)
+![](img/femme-noisy80.png)
 
 (image bruitée avec un niveau de bruit de 100)
 
-![](img\femme-noisy100.png)
+![](img/femme-noisy100.png)
 
 
 Pour exécuter le programme avec ces images, il faudrait :
@@ -114,11 +114,11 @@ Le programme générera des GIFs illustrant l'évolution de la diffusion anisotr
 
 Par exemple pour "femme-noisy80.png" :
 
-![](img\femme-noisy80.png-diffusion.gif)
+![](img/femme-noisy80.png-diffusion.gif)
 
 Le GIF qui montre l'évolution de la diffusion
 
-![](img\PSNR-femme-noisy80.png)
+![](img/PSNR-femme-noisy80.png)
 
 Le graphique PSNR
 
@@ -176,19 +176,19 @@ Le projet se compose des fonctions principales suivantes :
 ## Exemples
 Supposons que vous ayez les images suivantes dans un répertoire img/ :
 
-![](img\femme.jpg)
+![](img/femme.jpg)
 
 (image bruitée avec un niveau de bruit de 50)
 
-![](img\femme-noisy50.png)
+![](img/femme-noisy50.png)
 
 (image bruitée avec un niveau de bruit de 80)
 
-![](img\femme-noisy80.png)
+![](img/femme-noisy80.png)
 
 (image bruitée avec un niveau de bruit de 100)
 
-![](img\femme-noisy100.png)
+![](img/femme-noisy100.png)
 
 
 Pour exécuter le programme avec ces images, il faudrait :
@@ -206,11 +206,11 @@ Le programme générera des GIFs illustrant l'évolution de la diffusion anisotr
 
 Par exemple pour "femme-noisy80.png" :
 
-![](img\femme-noisy80-diffusee-exemple-color.gif)
+![](img/femme-noisy80-diffusee-exemple-color.gif)
 
 Le GIF qui montre l'évolution de la diffusion
 
-![](img\PSNR-femme-noisy80-color.png)
+![](img/PSNR-femme-noisy80-color.png)
 
 Le graphique PSNR
 
@@ -276,7 +276,7 @@ Pour exécuter le programme, utilisez la ligne de commande suivante :
 ## Exemples
 Supposons que vous ayez l'image suivante dans un répertoire img/ :
 
-![](img\starry_night.png)
+![](img/starry_night.png)
 
 Pour exécuter le programme avec ces images, il faudrait :
 
