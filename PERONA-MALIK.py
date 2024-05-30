@@ -188,7 +188,7 @@ def main(filename_originale: str, filenames_bruite: list[str], dt: float, iterat
 # Valeurs pour les tests
 dir = "img/"
 filename_originale = f"{dir}femme.jpg"
-filenames_bruite = [f"{dir}femme-noisy80.png"]
+filenames_bruite = [f"{dir}femme-noisy50.png", f"{dir}femme-noisy80.png", f"{dir}femme-noisy100.png"]
 
 dt = 0.14
 iterations = 60

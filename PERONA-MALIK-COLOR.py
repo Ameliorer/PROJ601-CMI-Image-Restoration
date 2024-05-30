@@ -231,7 +231,7 @@ def main(filename_originale: str, filenames_bruite: list[str], dt: float, iterat
 
         # Afficher les résultats
         cv2.imshow(f"{filename_bruite} couleur", img.astype('uint8'))
-        cv2.imshow(f"{filename_bruite} couleur diffusée", image_finale.astype('uint8'))
+        cv2.imshow(f"{filename_bruite} couleur diffusee", image_finale.astype('uint8'))
 
         # Tracer le graphe du PSNR en fonction des itérations
         plt.plot(range(iterations), psnr_values, marker='o')
@@ -248,7 +248,7 @@ def main(filename_originale: str, filenames_bruite: list[str], dt: float, iterat
 # Valeurs pour les tests
 dir = "img/"
 filename_originale = f"{dir}femme.jpg"
-filenames_bruite = [f"{dir}femme-noisy80.png"]
+filenames_bruite = [f"{dir}femme-noisy50.png", f"{dir}femme-noisy80.png", f"{dir}femme-noisy100.png"]
 
 dt = 0.14
 iterations = 60

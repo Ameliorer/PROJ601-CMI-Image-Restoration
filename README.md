@@ -114,11 +114,11 @@ Le programme générera des GIFs illustrant l'évolution de la diffusion anisotr
 
 Par exemple pour "femme-noisy80.png" :
 
-![](img/femme-noisy80.png-diffusion.gif)
+![](img/femme-noisy50-diffusee-exemple.gif)
 
 Le GIF qui montre l'évolution de la diffusion
 
-![](img/PSNR-femme-noisy80.png)
+![](img/PSNR-femme-noisy50.png)
 
 Le graphique PSNR
 
@@ -206,11 +206,11 @@ Le programme générera des GIFs illustrant l'évolution de la diffusion anisotr
 
 Par exemple pour "femme-noisy80.png" :
 
-![](img/femme-noisy80-diffusee-exemple-color.gif)
+![](img/femme-noisy50-diffusee-exemple-color.gif)
 
 Le GIF qui montre l'évolution de la diffusion
 
-![](img/PSNR-femme-noisy80-color.png)
+![](img/PSNR-femme-noisy50-color.png)
 
 Le graphique PSNR
 
